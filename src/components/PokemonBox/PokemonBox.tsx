@@ -9,6 +9,8 @@ export default function PokemonBox(props:Pokemon) {
             <p>Level: {props.level}</p>
             <p>Health: {props.health}</p>
             <p>Damage: {props.damage}</p>
+            <button onClick={() => props.onRemove}>Delete</button>
          </div>
          )
+        
 }

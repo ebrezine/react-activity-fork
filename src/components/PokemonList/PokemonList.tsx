@@ -19,7 +19,7 @@ export default function PokemonList() {
           health: 100,
           img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
           level: 2,
-          name: 'Pika'
+          name: 'Pika',
         },
         {
           damage: 10,
@@ -59,6 +59,12 @@ export default function PokemonList() {
         
         newPokemon.name = event.target.value;
       }
+      
+      function handleRemove(name: string){
+        setListPoke(listOfPokemons.filter(poke => {
+          return poke.name != name;
+        }));
+      }
 
     return  (
     <div>
@@ -75,7 +81,7 @@ export default function PokemonList() {
         <div className="grid-pokemon">
             {
                 listOfPokemons.map(poke => {
-                    return <PokemonBox key={poke.name} {...poke} />
+                    return <PokemonBox key={poke.name} onRemove={handleRemove} {...poke} />
                 })
             }
         </div>

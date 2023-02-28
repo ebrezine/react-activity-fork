@@ -5,6 +5,7 @@ export interface Pokemon {
     health:number,
     damage:number,
     img:string
+    onRemove?:Function;
 }
 
 //Why Interface and not class or object - enforce contract
